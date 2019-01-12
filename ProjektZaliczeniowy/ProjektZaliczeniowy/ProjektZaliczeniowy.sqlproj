@@ -62,5 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Marki.sql" />
+    <Build Include="dbo\Tables\Modele.sql" />
   </ItemGroup>
 </Project>
