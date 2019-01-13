@@ -1,4 +1,4 @@
-﻿CREATE TABLE [Serwis].[Zamowienia] (
+﻿CREATE TABLE [dbo].[Zamowienia] (
     [Zamowienie_Id]   INT             IDENTITY (1, 1) NOT NULL,
     [Klient_Id]       INT             CONSTRAINT [DF_Klient_Id_Zamowienia] DEFAULT ((-1)) NOT NULL,
     [Sprzedawca_Id]   INT             CONSTRAINT [DF_Sprzedawca_Id_Zamowienia] DEFAULT ((-1)) NOT NULL,

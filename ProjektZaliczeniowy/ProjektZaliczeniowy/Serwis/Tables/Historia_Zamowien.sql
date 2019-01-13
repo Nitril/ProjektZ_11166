@@ -7,6 +7,8 @@
     PRIMARY KEY CLUSTERED ([Log_Id] ASC),
     CONSTRAINT [FK_Pracownik_Id_Historia_Zamowien] FOREIGN KEY ([Pracownik_Id]) REFERENCES [HR].[Pracownik] ([Pracownik_Id]),
     CONSTRAINT [FK_Status_Id_Historia_Zamowien] FOREIGN KEY ([Status_Id]) REFERENCES [Serwis].[Statusy_Zamowien] ([Status_Id]),
-    CONSTRAINT [FK_Zamowienie_Id_Historia_Zamowien] FOREIGN KEY ([Zamowienie_Id]) REFERENCES [Serwis].[Zamowienia] ([Zamowienie_Id])
+    CONSTRAINT [FK_Zamowienie_Id_Historia_Zamowien] FOREIGN KEY ([Zamowienie_Id]) REFERENCES [dbo].[Zamowienia] ([Zamowienie_Id])
 );
+
+
 
