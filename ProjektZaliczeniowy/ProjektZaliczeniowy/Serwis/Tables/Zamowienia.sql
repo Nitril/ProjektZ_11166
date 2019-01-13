@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Zamowienia] (
+﻿CREATE TABLE [Serwis].[Zamowienia] (
     [Zamowienie_Id]   INT             IDENTITY (1, 1) NOT NULL,
     [Klient_Id]       INT             CONSTRAINT [DF_Klient_Id_Zamowienia] DEFAULT ((-1)) NOT NULL,
     [Sprzedawca_Id]   INT             CONSTRAINT [DF_Sprzedawca_Id_Zamowienia] DEFAULT ((-1)) NOT NULL,
@@ -18,10 +18,4 @@
     CONSTRAINT [FK_Oferta_Id_Zamowienia] FOREIGN KEY ([Oferta_Id]) REFERENCES [dbo].[Cennik] ([Oferta_Id]),
     CONSTRAINT [FK_Sprzedawca_Id_Zamowienia] FOREIGN KEY ([Sprzedawca_Id]) REFERENCES [HR].[Pracownik] ([Pracownik_Id]) ON DELETE SET DEFAULT ON UPDATE SET DEFAULT
 );
-
-
-
-
-
-
 
