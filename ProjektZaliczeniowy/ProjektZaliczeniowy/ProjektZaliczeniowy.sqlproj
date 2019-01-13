@@ -59,13 +59,23 @@
     <Folder Include="Properties" />
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
+    <Folder Include="HR\" />
+    <Folder Include="HR\Tables\" />
+    <Folder Include="Security\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Marki.sql" />
     <Build Include="dbo\Tables\Modele.sql" />
-    <Build Include="dbo\Tables\Pracownik.sql" />
     <Build Include="dbo\Tables\Klient.sql" />
     <Build Include="dbo\Tables\Cennik.sql" />
     <Build Include="dbo\Tables\Zamowienia.sql" />
+    <Build Include="HR\Tables\Pracownik.sql" />
+    <Build Include="HR\Tables\Wyplaty.sql" />
+    <Build Include="HR\Tables\Wynagrodzenia.sql" />
+    <Build Include="HR\Tables\Pracownicy_Stanowiska.sql" />
+    <Build Include="HR\Tables\Pracownicy_Zespoly.sql" />
+    <Build Include="HR\Tables\Zespoly.sql" />
+    <Build Include="HR\Tables\Stanowiska_Pracy.sql" />
+    <Build Include="Security\HR.sql" />
   </ItemGroup>
 </Project>

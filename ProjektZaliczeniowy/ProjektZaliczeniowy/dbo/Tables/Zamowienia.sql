@@ -16,8 +16,10 @@
     CONSTRAINT [FK_Klient_Id_Zamowienia] FOREIGN KEY ([Klient_Id]) REFERENCES [dbo].[Klient] ([Klient_Id]) ON DELETE SET DEFAULT ON UPDATE SET DEFAULT,
     CONSTRAINT [FK_Mod_Id_Zamowienia] FOREIGN KEY ([Mod_Id]) REFERENCES [dbo].[Modele] ([Mod_Id]) ON DELETE SET DEFAULT ON UPDATE SET DEFAULT,
     CONSTRAINT [FK_Oferta_Id_Zamowienia] FOREIGN KEY ([Oferta_Id]) REFERENCES [dbo].[Cennik] ([Oferta_Id]),
-    CONSTRAINT [FK_Sprzedawca_Id_Zamowienia] FOREIGN KEY ([Sprzedawca_Id]) REFERENCES [dbo].[Pracownik] ([Pracownik_Id]) ON DELETE SET DEFAULT ON UPDATE SET DEFAULT
+    CONSTRAINT [FK_Sprzedawca_Id_Zamowienia] FOREIGN KEY ([Sprzedawca_Id]) REFERENCES [HR].[Pracownik] ([Pracownik_Id]) ON DELETE SET DEFAULT ON UPDATE SET DEFAULT
 );
+
+
 
 
 
