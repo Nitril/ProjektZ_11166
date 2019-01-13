@@ -63,5 +63,8 @@
   <ItemGroup>
     <Build Include="dbo\Tables\Marki.sql" />
     <Build Include="dbo\Tables\Modele.sql" />
+    <Build Include="dbo\Tables\Pracownik.sql" />
+    <Build Include="dbo\Tables\Klient.sql" />
+    <Build Include="dbo\Tables\Cennik.sql" />
   </ItemGroup>
 </Project>
