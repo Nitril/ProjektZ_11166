@@ -64,12 +64,10 @@
     <Folder Include="Security\" />
     <Folder Include="Serwis\" />
     <Folder Include="Serwis\Tables\" />
+    <Folder Include="Salon\" />
+    <Folder Include="Salon\Tables\" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\Marki.sql" />
-    <Build Include="dbo\Tables\Modele.sql" />
-    <Build Include="dbo\Tables\Klient.sql" />
-    <Build Include="dbo\Tables\Cennik.sql" />
     <Build Include="HR\Tables\Pracownik.sql" />
     <Build Include="HR\Tables\Wyplaty.sql" />
     <Build Include="HR\Tables\Wynagrodzenia.sql" />
@@ -78,11 +76,15 @@
     <Build Include="HR\Tables\Zespoly.sql" />
     <Build Include="HR\Tables\Stanowiska_Pracy.sql" />
     <Build Include="Security\HR.sql" />
-    <Build Include="Serwis\Tables\Historia_Zamowien.sql" />
     <Build Include="Serwis\Tables\Statusy_Zamowien.sql" />
     <Build Include="Serwis\Tables\Uslugi.sql" />
     <Build Include="Security\Serwis.sql" />
-    <Build Include="dbo\Tables\Zamowienia.sql" />
     <Build Include="Serwis\Tables\Zamowienia.sql" />
+    <Build Include="HR\Tables\Klient.sql" />
+    <Build Include="Salon\Tables\Zamowienia.sql" />
+    <Build Include="Salon\Tables\Cennik.sql" />
+    <Build Include="Salon\Tables\Modele.sql" />
+    <Build Include="Salon\Tables\Marki.sql" />
+    <Build Include="Security\Salon.sql" />
   </ItemGroup>
 </Project>

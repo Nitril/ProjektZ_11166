@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Klient] (
+﻿CREATE TABLE [HR].[Klient] (
     [Klient_Id]            INT           IDENTITY (1, 1) NOT NULL,
     [Nazwisko]             NVARCHAR (30) NOT NULL,
     [Imie]                 NVARCHAR (25) NOT NULL,
@@ -9,6 +9,4 @@
     PRIMARY KEY CLUSTERED ([Klient_Id] ASC),
     UNIQUE NONCLUSTERED ([Nr_Dowodu_Osobistego] ASC)
 );
-
-
 

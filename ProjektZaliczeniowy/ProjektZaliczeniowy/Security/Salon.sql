@@ -1,7 +1,3 @@
-﻿CREATE SCHEMA [HR]
+﻿CREATE SCHEMA [Salon]
     AUTHORIZATION [dbo];
-
-
-
-
 
