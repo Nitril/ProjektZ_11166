@@ -86,5 +86,7 @@
     <Build Include="Salon\Tables\Modele.sql" />
     <Build Include="Salon\Tables\Marki.sql" />
     <Build Include="Security\Salon.sql" />
+    <Build Include="Serwis\Tables\HistoriaZamowien.sql" />
+    <Build Include="Salon\Tables\HistoriaZamowien.sql" />
   </ItemGroup>
 </Project>
