@@ -66,6 +66,8 @@
     <Folder Include="Serwis\Tables\" />
     <Folder Include="Salon\" />
     <Folder Include="Salon\Tables\" />
+    <Folder Include="rapOp\" />
+    <Folder Include="rapOp\Views\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="HR\Tables\Pracownik.sql" />
@@ -88,5 +90,10 @@
     <Build Include="Security\Salon.sql" />
     <Build Include="Serwis\Tables\HistoriaZamowien.sql" />
     <Build Include="Salon\Tables\HistoriaZamowien.sql" />
+    <Build Include="rapOp\Views\vSprzedawcySprzedaz.sql" />
+    <Build Include="rapOp\Views\vNiezamawianeModele.sql" />
+    <Build Include="rapOp\Views\vZamowieniaRabat.sql" />
+    <Build Include="rapOp\Views\vSprzedazMarek.sql" />
+    <Build Include="Security\rapOp.sql" />
   </ItemGroup>
 </Project>
