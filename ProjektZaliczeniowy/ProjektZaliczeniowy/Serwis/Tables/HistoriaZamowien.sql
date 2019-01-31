@@ -11,12 +11,17 @@
     [Data_Utworzenia]  SMALLDATETIME   NOT NULL,
     [Data_Rozpoczecia] SMALLDATETIME   NULL,
     [Data_Zakonczenia] SMALLDATETIME   NULL,
-    [StartDate]        DATETIME2 (7)   NOT NULL,
-    [EndDate]          DATETIME2 (7)   NOT NULL
+    [Aktualizujacy_Id] INT             NOT NULL,
+    [Wpis_Od]          DATETIME2 (7)   NOT NULL,
+    [Wpis_Do]          DATETIME2 (7)   NOT NULL
 );
+
+
 
 
 GO
 CREATE CLUSTERED INDEX [ix_HistoriaZamowien]
-    ON [Serwis].[HistoriaZamowien]([EndDate] ASC, [StartDate] ASC) WITH (DATA_COMPRESSION = PAGE);
+    ON [Serwis].[HistoriaZamowien]([Wpis_Do] ASC, [Wpis_Od] ASC) WITH (DATA_COMPRESSION = PAGE);
+
+
 
