@@ -95,6 +95,12 @@
     <Build Include="rapOp\Views\vSprzedazMarek.sql" />
     <Build Include="Security\rapOp.sql" />
     <Build Include="rapOp\Views\vSprzedawcaSprzedaz.sql" />
+    <Build Include="rapOp\Views\vZarobkiWygenerowaneUslugiSerwis.sql" />
+    <Build Include="rapOp\Views\vWynagrodzeniaZespolowTotal.sql" />
+    <Build Include="rapOp\Views\vStaliKlienciSerwis.sql" />
+    <Build Include="rapOp\Views\vPremiePracownikow.sql" />
+    <Build Include="rapOp\Views\vPracownicyNieprzypisaniDoZespolu.sql" />
+    <Build Include="rapOp\Views\vKlienciIOtwarteZamowieniaSerwis.sql" />
   </ItemGroup>
   <ItemGroup>
     <PreDeploy Include="LoadData.sql" />
