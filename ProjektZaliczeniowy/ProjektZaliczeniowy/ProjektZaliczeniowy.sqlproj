@@ -96,4 +96,7 @@
     <Build Include="Security\rapOp.sql" />
     <Build Include="rapOp\Views\vSprzedawcaSprzedaz.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <PreDeploy Include="LoadData.sql" />
+  </ItemGroup>
 </Project>
