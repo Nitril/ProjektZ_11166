@@ -1,4 +1,4 @@
-﻿CREATE TABLE [Salon].[HistoriaZamowien] (
+﻿CREATE TABLE [Salon].[MSSQL_TemporalHistoryFor_1963154039] (
     [Zamowienie_Id]    INT             NOT NULL,
     [Klient_Id]        INT             NOT NULL,
     [Sprzedawca_Id]    INT             NOT NULL,
@@ -16,13 +16,7 @@
 );
 
 
-
-
-
-
 GO
-CREATE CLUSTERED INDEX [ix_HistoriaZamowien]
-    ON [Salon].[HistoriaZamowien]([Wpis_Do] ASC, [Wpis_Od] ASC) WITH (DATA_COMPRESSION = PAGE);
-
-
+CREATE CLUSTERED INDEX [ix_MSSQL_TemporalHistoryFor_1963154039]
+    ON [Salon].[MSSQL_TemporalHistoryFor_1963154039]([Wpis_Do] ASC, [Wpis_Od] ASC) WITH (DATA_COMPRESSION = PAGE);
 
