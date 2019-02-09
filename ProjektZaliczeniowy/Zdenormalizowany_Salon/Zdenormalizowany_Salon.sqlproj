@@ -68,7 +68,6 @@
     <Folder Include="Security\" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\HistoriaZamowien.sql" />
     <Build Include="dbo\Tables\FactZamowienia.sql" />
     <Build Include="Serwis\Tables\DimUslugi.sql" />
     <Build Include="Serwis\Tables\DimStatusy_Zamowien.sql" />

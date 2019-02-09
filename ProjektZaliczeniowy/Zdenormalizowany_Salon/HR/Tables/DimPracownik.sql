@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [HR].[DimPracownik] (
-    [Pracownik_Id]                INT           IDENTITY (1, 1) NOT NULL,
+    [Pracownik_Id]                INT           NOT NULL,
     [Nazwisko]                    NVARCHAR (30) NOT NULL,
     [Imie]                        NVARCHAR (25) NOT NULL,
     [NIP]                         CHAR (13)     NULL,
@@ -12,7 +12,8 @@
     [Stanowisko_Data_Przypisania] SMALLDATETIME NOT NULL,
     [Stanowisko_Data_Wypisania]   SMALLDATETIME NULL,
     [Zespol_Data_Przypisania]     SMALLDATETIME NOT NULL,
-    [Zespol_Data_Wypisania]       SMALLDATETIME NULL,
-    PRIMARY KEY CLUSTERED ([Pracownik_Id] ASC)
+    [Zespol_Data_Wypisania]       SMALLDATETIME NULL
 );
+
+
 
