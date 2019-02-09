@@ -21,7 +21,9 @@
     CONSTRAINT [FK_Sprzedawca_Id_Salon_Zamowienia] FOREIGN KEY ([Sprzedawca_Id]) REFERENCES [HR].[Pracownik] ([Pracownik_Id]),
     PERIOD FOR SYSTEM_TIME ([Wpis_Od], [Wpis_Do])
 )
-WITH (SYSTEM_VERSIONING = ON (HISTORY_TABLE=[Salon].[MSSQL_TemporalHistoryFor_1963154039_F493DFCB], DATA_CONSISTENCY_CHECK=ON));
+WITH (SYSTEM_VERSIONING = ON (HISTORY_TABLE=[Salon].[HistoriaZamowien], DATA_CONSISTENCY_CHECK=ON));
+
+
 
 
 

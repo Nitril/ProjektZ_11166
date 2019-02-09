@@ -20,6 +20,8 @@
 
 
 
+
+
 GO
 CREATE CLUSTERED INDEX [ix_HistoriaZamowien]
     ON [Salon].[HistoriaZamowien]([Wpis_Do] ASC, [Wpis_Od] ASC) WITH (DATA_COMPRESSION = PAGE);

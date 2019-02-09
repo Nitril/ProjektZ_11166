@@ -102,7 +102,6 @@
     <Build Include="rapOp\Views\vPremiePracownikow.sql" />
     <Build Include="rapOp\Views\vPracownicyNieprzypisaniDoZespolu.sql" />
     <Build Include="rapOp\Views\vKlienciIOtwarteZamowieniaSerwis.sql" />
-    <Build Include="Salon\Tables\MSSQL_TemporalHistoryFor_1963154039_F493DFCB.sql" />
     <Build Include="Salon\Tables\MSSQL_TemporalHistoryFor_1963154039.sql" />
     <Build Include="dbo\Stored Procedures\generuj_zamowieniaSerwis.sql" />
     <Build Include="dbo\Stored Procedures\generuj_zamowieniaSalon.sql" />
