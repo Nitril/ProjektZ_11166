@@ -66,18 +66,21 @@
     <Folder Include="HR\" />
     <Folder Include="HR\Tables\" />
     <Folder Include="Security\" />
+    <Folder Include="dbo\Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\FactZamowienia.sql" />
     <Build Include="Serwis\Tables\DimUslugi.sql" />
     <Build Include="Serwis\Tables\DimStatusy_Zamowien.sql" />
     <Build Include="Salon\Tables\Dim_Modele.sql" />
-    <Build Include="HR\Tables\DimWyplaty_Wynagrodzenia.sql" />
     <Build Include="HR\Tables\DimPracownik.sql" />
     <Build Include="HR\Tables\DimKlient.sql" />
     <Build Include="Security\Serwis.sql" />
     <Build Include="Security\Salon.sql" />
     <Build Include="Security\rapAn.sql" />
     <Build Include="Security\HR.sql" />
+    <Build Include="Salon\Tables\DimCennik.sql" />
+    <Build Include="HR\Tables\DimWyplaty_Wynagrodzenia_Przypisania.sql" />
+    <Build Include="dbo\Stored Procedures\LoadDataFromSalonToDenom_Salon.sql" />
   </ItemGroup>
 </Project>
