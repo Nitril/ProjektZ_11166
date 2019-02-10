@@ -2,14 +2,16 @@
     
 AS   
   
--- procedura ladujaca 
+-- procedura ladujaca dane z bazy SALONSAMOCHODOWY do zdenormalizowanej bazy DENOM_SALONSAMOCHODOWY
 Insert into DENOM_SALONSAMOCHODOWY.Serwis.DimUslugi([Usluga_Id]
       ,[Usluga_Opis]
       ,[Usluga_Nazwa]
-      ,[Usluga_Kod]) select [Usluga_Id]
+      ,[Usluga_Kod] )
+	  SELECT [Usluga_Id]
       ,[Usluga_Opis]
       ,[Usluga_Nazwa]
-      ,[Usluga_Kod] from [SALONSAMOCHODOWY].[Serwis].[Uslugi];
+      ,[Usluga_Kod] 
+	  from [SALONSAMOCHODOWY].[Serwis].[Uslugi];
 
 
 Insert into [DENOM_SALONSAMOCHODOWY].[HR].[DimKlient]([Klient_Id]
@@ -19,7 +21,9 @@ Insert into [DENOM_SALONSAMOCHODOWY].[HR].[DimKlient]([Klient_Id]
       ,[Firma]
       ,[Telefon]
       ,[Nr_Dowodu_Osobistego]
-      ,[Klient_Kod]) select [Klient_Id]
+      ,[Klient_Kod])
+SELECT 
+		[Klient_Id]
       ,[Nazwisko]
       ,[Imie]
       ,[NIP]
@@ -28,6 +32,20 @@ Insert into [DENOM_SALONSAMOCHODOWY].[HR].[DimKlient]([Klient_Id]
       ,[Nr_Dowodu_Osobistego]
       ,[Klient_Kod] from [SALONSAMOCHODOWY].[HR].[Klient];
 
+
+Insert into DENOM_SALONSAMOCHODOWY.Salon.DimCennik([Oferta_Id]
+      ,[Mod_Id]
+      ,[Cena]
+      ,[Oferta_Od]
+      ,[Oferta_Do]
+      ,[Oferta_Kod] )
+	  SELECT [Oferta_Id]
+      ,[Mod_Id]
+      ,[Cena]
+      ,[Oferta_Od]
+      ,[Oferta_Do]
+      ,[Oferta_Kod]
+	  from [SALONSAMOCHODOWY].[Salon].[Cennik];
 
 Insert into [DENOM_SALONSAMOCHODOWY].[Serwis].[DimStatusy_Zamowien] ([Status_Id]
       ,[Status])
@@ -41,24 +59,15 @@ Insert into [DENOM_SALONSAMOCHODOWY].[Serwis].[DimStatusy_Zamowien] ([Status_Id]
 INSERT INTO [DENOM_SALONSAMOCHODOWY].[Salon].[Dim_Modele] ([Mod_Id]
       ,[Mod_Kod]
       ,[Mod_Nazwa]
-      ,[Cena]
-      ,[Oferta_Od]
-      ,[Oferta_Do]
-      ,[Oferta_Kod]
       ,[Mrk_Kod]
       ,[Mrk_Nazwa])
 Select smo.[Mod_Id]
       ,[Mod_Kod]
       ,[Mod_Nazwa]
-      ,[Cena]
-      ,[Oferta_Od]
-      ,[Oferta_Do]
-      ,[Oferta_Kod]
       ,[Mrk_Kod]
       ,[Mrk_Nazwa]
 FROM
-SALONSAMOCHODOWY.Salon.Cennik sc 
-INNER JOIN SALONSAMOCHODOWY.Salon.Modele smo ON  sc.Mod_Id = smo.Mod_Id
+SALONSAMOCHODOWY.Salon.Modele smo 
 INNER JOIN SALONSAMOCHODOWY.Salon.Marki sma ON  sma.Mrk_Id = smo.Mrk_Id
 
 INSERT INTO [DENOM_SALONSAMOCHODOWY].[HR].[DimPracownik]
@@ -68,6 +77,31 @@ INSERT INTO [DENOM_SALONSAMOCHODOWY].[HR].[DimPracownik]
       ,[NIP]
       ,[PESEL]
       ,[Pracownik_Kod]
+      )
+SELECT [Pracownik_Id]
+      ,[Nazwisko]
+      ,[Imie]
+      ,[NIP]
+      ,[PESEL]
+      ,[Pracownik_Kod]
+      
+FROM SALONSAMOCHODOWY.HR.Pracownik 
+--INNER JOIN SALONSAMOCHODOWY.HR.Pracownicy_Stanowiska hps ON hps.Pracownik_Id = hpr.Pracownik_Id
+--INNER JOIN SALONSAMOCHODOWY.HR.Stanowiska_Pracy hsp ON hsp.Stanowisko_Id = hps.Stanowisko_Id
+--INNER JOIN SALONSAMOCHODOWY.HR.Pracownicy_Zespoly hsz ON hsz.Pracownik_Id = hpr.Pracownik_Id
+--INNER JOIN SALONSAMOCHODOWY.HR.Zespoly hz ON hz.Zespol_Id = hsz.Zespol_Id
+-- do updatu
+INSERT INTO [DENOM_SALONSAMOCHODOWY].[HR].[DimWyplaty_Wynagrodzenia_Przypisania]
+(    [Wyplata_Id]
+      ,[Pracownik_Id]
+      ,[Kwota_Wynagrodzenia]
+      ,[Kwota_Wyplaty]
+      ,[Typ]
+      ,[Wyplata_Okres_Od]
+      ,[Wyplata_Okres_Do]
+      ,[Wynagrodzenie_Okres_Od]
+      ,[Wynagrodzenie_Okres_Do]
+	  
       ,[Stanowisko]
       ,[Stanowisko_Kod]
       ,[Zespol]
@@ -76,48 +110,31 @@ INSERT INTO [DENOM_SALONSAMOCHODOWY].[HR].[DimPracownik]
       ,[Stanowisko_Data_Wypisania]
       ,[Zespol_Data_Przypisania]
       ,[Zespol_Data_Wypisania])
-SELECT hpr.[Pracownik_Id]
-      ,[Nazwisko]
-      ,[Imie]
-      ,[NIP]
-      ,[PESEL]
-      ,[Pracownik_Kod]
-      ,[Stanowisko]
-      ,[Stanowisko_Kod]
-      ,[Zespol]
-      ,[Zespol_Kod]
+SELECT 
+       [Wyplata_Id]
+      ,hpr.[Pracownik_Id]
+      ,hwy.[Kwota]
+      ,hwp.[Kwota]
+      ,hwp.[Typ]
+      ,hwp.[Okres_Od]
+      ,hwp.[Okres_Do]
+      ,hwy.[Okres_Od]
+      ,hwy.[Okres_Do]
+	  ,hsp.[Stanowisko]
+      ,hsp.[Stanowisko_Kod]
+      ,hz.[Zespol]
+      ,hz.[Zespol_Kod]
       ,hps.[Data_Przypisania]
       ,hps.[Data_Wypisania]
       ,hsz.[Data_Przypisania]
       ,hsz.[Data_Wypisania]
 FROM SALONSAMOCHODOWY.HR.Pracownik hpr
+INNER JOIN SALONSAMOCHODOWY.HR.Wyplaty hwp ON hpr.Pracownik_Id = hwp.Pracownik_Id
+INNER JOIN SALONSAMOCHODOWY.HR.Wynagrodzenia hwy ON hwy.Pracownik_Id = hwp.Pracownik_Id 
 INNER JOIN SALONSAMOCHODOWY.HR.Pracownicy_Stanowiska hps ON hps.Pracownik_Id = hpr.Pracownik_Id
 INNER JOIN SALONSAMOCHODOWY.HR.Stanowiska_Pracy hsp ON hsp.Stanowisko_Id = hps.Stanowisko_Id
 INNER JOIN SALONSAMOCHODOWY.HR.Pracownicy_Zespoly hsz ON hsz.Pracownik_Id = hpr.Pracownik_Id
 INNER JOIN SALONSAMOCHODOWY.HR.Zespoly hz ON hz.Zespol_Id = hsz.Zespol_Id
-
-INSERT INTO [DENOM_SALONSAMOCHODOWY].[HR].[DimWyplaty_Wynagrodzenia]
-([Wyplata_Id]
-      ,[Pracownik_Id]
-      ,[Kwota_Wynagrodzenia]
-	  ,[Kwota_Wyplaty]
-      ,[Typ]
-      ,[Wyplata_Okres_Od]     
-	  ,[Wyplata_Okres_Do]
-      ,[Wynagrodzenie_Okres_Od]
-      ,[Wynagrodzenie_Okres_Do])
-SELECT [Wyplata_Id]
-      ,hwy.[Pracownik_Id]
-      ,hwy.[Kwota]
-	  ,hwp.[Kwota]
-      ,[Typ]
-      ,hwp.[Okres_Od]
-      ,hwp.[Okres_Do]
-      ,hwy.[Okres_Od]
-      ,hwy.[Okres_Do]
-FROM SALONSAMOCHODOWY.HR.Wyplaty hwp
-INNER JOIN SALONSAMOCHODOWY.HR.Wynagrodzenia hwy ON hwy.Pracownik_Id = hwp.Pracownik_Id 
-
 
 INSERT INTO [DENOM_SALONSAMOCHODOWY].[dbo].[FactZamowienia] ([Salon_Zamowienie_Id]
 	  ,[Serwis_Zamowienie_Id]
