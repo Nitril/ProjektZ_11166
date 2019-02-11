@@ -1,4 +1,5 @@
-﻿CREATE VIEW rapOp.vStaliKlienciSerwis
+﻿-- pokaż wszystkich klientów którzy złożyli więcej niż 3 zamówienia w serwisie
+CREATE VIEW rapOp.vStaliKlienciSerwis
 		AS
 		SELECT kl.Imie, kl.Nazwisko, COUNT(Zamowienie_Id) AS Liczba_Zamowien
 		FROM Serwis.Zamowienia za WITH (READUNCOMMITTED) 

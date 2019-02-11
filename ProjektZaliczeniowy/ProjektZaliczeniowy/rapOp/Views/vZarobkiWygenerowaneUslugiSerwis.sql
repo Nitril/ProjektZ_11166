@@ -1,4 +1,5 @@
-﻿CREATE VIEW rapOp.vZarobkiWygenerowaneUslugiSerwis
+﻿-- pokaż sumaryczny przychód wygenerowany przez poszczególne usługi
+CREATE VIEW rapOp.vZarobkiWygenerowaneUslugiSerwis
 		AS
 		SELECT us.Usluga_Nazwa, SUM(za.Cena_Sprzedazy) AS Przychod
 		FROM Serwis.Zamowienia za WITH (READUNCOMMITTED) 

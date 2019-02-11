@@ -1,4 +1,5 @@
-﻿CREATE VIEW rapOp.vWynagrodzeniaZespolowTotal
+﻿-- pokaż sumaryczne wynagrodzenia jakie przyjęły zespoły
+CREATE VIEW rapOp.vWynagrodzeniaZespolowTotal
 		AS
 		SELECT ze.Zespol, SUM(wy.Kwota) as Suma_Wynagrodzenia
 		FROM HR.Wynagrodzenia wy  WITH (READUNCOMMITTED)

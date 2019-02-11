@@ -1,4 +1,5 @@
-﻿CREATE VIEW rapOp.vKlienciIOtwarteZamowieniaSerwis
+﻿-- Pokaż wszystkie niezakończone zamówienia w serwisie, których klientów to dotyczy oraz cene sprzedaży
+CREATE VIEW rapOp.vKlienciIOtwarteZamowieniaSerwis
 		AS
 		SELECT kl.Imie, kl.Nazwisko, za.Zamowienie_Id, za.Cena_Sprzedazy, sz.[Status]
 		FROM Serwis.Zamowienia za WITH (READUNCOMMITTED) 

@@ -1,4 +1,5 @@
-﻿Create VIEW rapOp.vPracownicyNieprzypisaniDoZespolu
+﻿-- pokaż pracowników nieprzypisanych do żadnego zespołu
+CREATE VIEW rapOp.vPracownicyNieprzypisaniDoZespolu
 		AS
 		SELECT pr.Imie, pr.Nazwisko
 		FROM HR.Pracownik pr WITH (READUNCOMMITTED) 

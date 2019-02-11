@@ -1,4 +1,5 @@
-﻿CREATE VIEW rapOp.vPremiePracownikow
+﻿-- pokaż pracowników łącznie z sumaryczną kwotą premi jaką otrzymali
+CREATE VIEW rapOp.vPremiePracownikow
 		AS
 		Select pr.Imie, pr.Nazwisko, SUM(kwota) as Sumaryczna_Kwota_Premii
 		FROM HR.Pracownik pr  WITH (READUNCOMMITTED) INNER JOIN HR.Wyplaty wy WITH (READUNCOMMITTED) ON pr.Pracownik_Id = wy.Pracownik_Id

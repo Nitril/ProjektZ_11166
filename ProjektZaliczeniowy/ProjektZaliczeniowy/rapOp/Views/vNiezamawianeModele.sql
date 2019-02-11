@@ -1,5 +1,5 @@
-﻿CREATE VIEW [rapOp].vNiezamawianeModele 
-
+﻿--pokaż modele które nie były zamawiane
+CREATE VIEW [rapOp].vNiezamawianeModele 
 AS
 SELECT m.Mod_Nazwa
 FROM Salon.Zamowienia z WITH (READUNCOMMITTED) 

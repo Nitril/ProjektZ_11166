@@ -1,10 +1,6 @@
-﻿CREATE VIEW [rapOp].[vZamowieniaRabat] 
-
+﻿--pokaż rabat jaki został udzielony na poszczególne zamówienie
+CREATE VIEW [rapOp].[vZamowieniaRabat] 
 AS
-
-SELECT z.Zamowienie_Id, (c.Cena-z.Cena_Sprzedazy/c.Cena) AS Rabat
+SELECT z.Zamowienie_Id, CAST((c.Cena-z.Cena_Sprzedazy/c.Cena)AS DECIMAL (8, 2)) AS Rabat
 FROM Salon.Zamowienia z WITH (READUNCOMMITTED)
 INNER JOIN Salon.Cennik c WITH (READUNCOMMITTED) ON z.Mod_Id = c.Mod_Id
-WHERE c.Cena = (SELECT DISTINCT c.Cena 
-FROM Salon.Cennik 
-WHERE z.Data_Sprzedazy BETWEEN c.Oferta_Od AND c.Oferta_Do)

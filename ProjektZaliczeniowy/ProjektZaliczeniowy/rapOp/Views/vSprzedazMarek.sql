@@ -1,7 +1,6 @@
-﻿CREATE VIEW [rapOp].vSprzedazMarek 
-
+﻿--pokaż jak sprzedają się poszczególne marki samochodów łącznie z ilością zamówień i sumarycznym przychodem
+CREATE VIEW [rapOp].vSprzedazMarek 
 AS
-
 SELECT mk.Mrk_Nazwa, Count(Mrk_Nazwa) AS Ilosc_Zam, SUM(Cena_Sprzedazy) as Sumaryczna_Cena_Sprzedazy  
 FROM Salon.Zamowienia z WITH (READUNCOMMITTED) 
 INNER JOIN Salon.Modele m WITH (READUNCOMMITTED) ON z.Mod_Id = m.Mod_Id 
