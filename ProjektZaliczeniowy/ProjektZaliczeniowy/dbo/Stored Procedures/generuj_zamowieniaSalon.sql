@@ -1,4 +1,5 @@
-﻿CREATE PROCEDURE generuj_zamowieniaSalon
+﻿--generuj zamówienia do tabeli zamówień Salon
+CREATE PROCEDURE generuj_zamowieniaSalon
        @ileZamowien int
 
 AS
