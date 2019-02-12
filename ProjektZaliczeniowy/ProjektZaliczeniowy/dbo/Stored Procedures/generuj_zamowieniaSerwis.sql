@@ -1,5 +1,4 @@
-﻿--generuj zamówienia do tabeli zamówień Serwis
-CREATE PROCEDURE generuj_zamowieniaSerwis
+﻿CREATE PROCEDURE generuj_zamowieniaSerwis
        @ileZamowien int
 
 AS
