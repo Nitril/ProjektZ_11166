@@ -67,6 +67,10 @@
     <Folder Include="HR\Tables\" />
     <Folder Include="Security\" />
     <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="rapAn\" />
+    <Folder Include="rapAn\Views\" />
+    <Folder Include="rapAn\Functions\" />
+    <Folder Include="rapAn\Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\FactZamowienia.sql" />
@@ -82,5 +86,10 @@
     <Build Include="Salon\Tables\DimCennik.sql" />
     <Build Include="HR\Tables\DimWyplaty_Wynagrodzenia_Przypisania.sql" />
     <Build Include="dbo\Stored Procedures\LoadDataFromSalonToDenom_Salon.sql" />
+    <Build Include="rapAn\Views\vWykazSprzedazZamowienPerPracownikSerwis.sql" />
+    <Build Include="rapAn\Views\vPrzychodPerRokPerPracownikTotal.sql" />
+    <Build Include="rapAn\Functions\ZestawienieZamowienKlientSerwis.sql" />
+    <Build Include="rapAn\Functions\SprawdzRankingWyplatZespolow.sql" />
+    <Build Include="rapAn\Stored Procedures\NajrzadziejZamawianeModele.sql" />
   </ItemGroup>
 </Project>
