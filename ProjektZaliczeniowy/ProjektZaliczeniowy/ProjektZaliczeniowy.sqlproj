@@ -106,6 +106,6 @@
     <Build Include="dbo\Stored Procedures\generuj_zamowieniaSalon.sql" />
   </ItemGroup>
   <ItemGroup>
-    <PreDeploy Include="LoadData.sql" />
+    <PostDeploy Include="SkryptLadujacyInicjalneDane.sql" />
   </ItemGroup>
 </Project>
